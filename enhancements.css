@@ -1,0 +1,60 @@
+/* Champagne light, slow breathing motion and layered botanical depth. */
+.gold-shimmer {display:inline-block;color:#76502b;animation:word-drift 7s ease-in-out infinite;animation-delay:var(--scene-phase,0s)}
+@supports ((background-clip:text) or (-webkit-background-clip:text)) {
+ .gold-shimmer {background-image:linear-gradient(105deg,#65432b 0%,#825a30 34%,#bd914e 47%,#6d4728 58%,#65432b 100%);background-size:260% 100%;background-position:150% 0;background-clip:text;-webkit-background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:gold-travel 7.5s ease-in-out infinite,word-drift 7s ease-in-out infinite}
+}
+.names [data-bride]{animation-delay:-3.6s,-2.5s}
+#cover-title em{padding-right:.08em;padding-bottom:.08em}
+.names [data-groom],.names [data-bride]{padding-block:.04em}
+.hero-photo-caption em{animation:caption-glow 6s ease-in-out infinite}
+.cover-note{animation:soft-breath 8s ease-in-out infinite}
+.floating-date{animation:badge-float 6s ease-in-out infinite}
+.hero-photo-wrap{animation:portrait-float 9s ease-in-out infinite}
+.photo-frame{animation:portrait-float 8s ease-in-out infinite}
+.photo-frame:nth-child(2){animation-delay:-2.7s;animation-duration:9s}
+.photo-frame:nth-child(3){animation-delay:-5s;animation-duration:10s}
+.photo-frame:hover,.photo-frame:focus-within,.gallery-stage:active .photo-frame{animation-play-state:paused}
+.hero-photo,.photo-frame,.venue-frame{isolation:isolate}
+.hero-photo:before{content:'';position:absolute;inset:-20% -80%;background:linear-gradient(110deg,transparent 42%,#fff7e020 49%,transparent 56%);transform:translateX(-40%);animation:photo-light 12s ease-in-out infinite;z-index:3;pointer-events:none}
+.photo-frame:after{content:'';position:absolute;inset:0;border:1px solid #c9a45c80;box-shadow:inset 0 0 0 5px #fffaf020;pointer-events:none;animation:frame-breathe 6s ease-in-out infinite;border-radius:inherit;z-index:1}
+.photo-frame:nth-child(2):after{animation-delay:-2s}.photo-frame:nth-child(3):after{animation-delay:-4s}
+.seal:after{content:'';position:absolute;inset:-7px;border:1px solid #b08c4b66;border-radius:50%;animation:seal-ripple 4.8s ease-out infinite;pointer-events:none}
+.opened .seal:after{display:none}
+.fine-divider>span{display:inline-block;animation:heart-breathe 5s ease-in-out infinite}
+.wish-intro>.ornament{animation:heart-breathe 5.5s ease-in-out infinite;transform-origin:center}
+.countdown>div{border-bottom:1px solid #b8965c44;padding-bottom:12px;position:relative}
+.countdown>div:after{content:'';position:absolute;bottom:-1px;left:0;width:100%;height:1px;background:linear-gradient(90deg,transparent,#9d733b,transparent);transform-origin:left;animation:countdown-light 6s ease-in-out infinite}
+.countdown>div:nth-child(2):after{animation-delay:-1.5s}.countdown>div:nth-child(3):after{animation-delay:-3s}.countdown>div:nth-child(4):after{animation-delay:-4.5s}
+.huge-date{animation:date-glow 8s ease-in-out infinite}
+.button.gold{position:relative;overflow:hidden;isolation:isolate}
+.button.gold:before{content:'';position:absolute;inset:-50% -100%;background:linear-gradient(110deg,transparent 44%,#fff9df22 50%,transparent 56%);pointer-events:none;transform:translateX(-40%);animation:button-light 9s ease-in-out infinite;z-index:-1}
+.button.gold:hover:before{animation-duration:2.4s}
+.timeline li.visible:before{animation:timeline-glow 5s ease-in-out infinite}
+.timeline li:nth-child(2):before{animation-delay:-2.5s}
+.petal-field{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;perspective:700px}
+.cover-content,.hero-photo-wrap,.invitation> :not(.petal-field),.closing> :not(.petal-field){position:relative;z-index:1}
+.floating-petal,.floating-spark{position:absolute;left:var(--x);top:-25px;display:block;animation:petal-flight var(--duration) linear infinite;animation-delay:var(--delay);pointer-events:none}
+.floating-petal{width:11px;height:19px;background:linear-gradient(135deg,#e7d7b37a,#b9945538);border:1px solid #b59a6730;border-radius:90% 15% 85% 20%}
+.floating-spark{width:4px;height:4px;background:#a27c42aa;border-radius:50%;box-shadow:0 0 7px #d8b97a66}
+.closing .footer-monogram{animation:monogram-halo 8s ease-in-out infinite}
+@keyframes gold-travel{0%,16%{background-position:150% 0}70%,100%{background-position:-100% 0}}
+@keyframes word-drift{0%,100%{translate:0 0}50%{translate:0 -4px}}
+@keyframes soft-breath{0%,100%{translate:0 0}50%{translate:0 -3px}}
+@keyframes caption-glow{0%,100%{text-shadow:0 0 0 #e7d5b300}50%{text-shadow:0 0 20px #e7d5b355}}
+@keyframes portrait-float{0%,100%{translate:0 0}50%{translate:0 -9px}}
+@keyframes badge-float{0%,100%{translate:0 0}50%{translate:0 7px}}
+@keyframes photo-light{0%,48%{transform:translateX(-40%);opacity:0}55%{opacity:1}85%,100%{transform:translateX(40%);opacity:0}}
+@keyframes frame-breathe{0%,100%{opacity:.45}50%{opacity:.95}}
+@keyframes seal-ripple{0%{scale:1;opacity:.6}70%,100%{scale:1.35;opacity:0}}
+@keyframes heart-breathe{0%,100%{scale:1}50%{scale:1.1}}
+@keyframes countdown-light{0%,100%{scale:.3 1;opacity:.25}50%{scale:1 1;opacity:.9}}
+@keyframes date-glow{0%,100%{filter:drop-shadow(0 0 0 #c9a45c00)}50%{filter:drop-shadow(0 0 12px #c9a45c30)}}
+@keyframes button-light{0%,65%{transform:translateX(-40%)}90%,100%{transform:translateX(40%)}}
+@keyframes timeline-glow{0%,100%{box-shadow:0 0 0 7px #d8bc8615}50%{box-shadow:0 0 0 10px #d8bc8622,0 0 18px #d8bc8644}}
+@keyframes petal-flight{0%{transform:translate3d(0,0,0) rotateX(0) rotateZ(0);opacity:0}12%{opacity:.6}85%{opacity:.45}100%{transform:translate3d(var(--drift),110svh,40px) rotateX(160deg) rotateZ(150deg);opacity:0}}
+@keyframes monogram-halo{0%,100%{filter:drop-shadow(0 0 0 #b7925000)}50%{filter:drop-shadow(0 0 10px #b7925044)}}
+/* Continuous effects sleep outside the viewport, when hidden, and under motion preferences. */
+.enhanced-motion .scene:not(.motion-in-view) *,.enhanced-motion .scene:not(.motion-in-view) *:before,.enhanced-motion .scene:not(.motion-in-view) *:after,.effects-paused *,.effects-paused *:before,.effects-paused *:after{animation-play-state:paused!important}
+@media(max-width:760px){.floating-petal:nth-child(n+5),.floating-spark:nth-child(n+5){display:none}.hero-photo-wrap,.photo-frame{animation-duration:11s}.gold-shimmer{animation-duration:9s,9s}.cover-note{animation:none}.hero-photo:before{animation-duration:16s}}
+@media(prefers-reduced-motion:reduce){.petal-field{display:none}.gold-shimmer{background:none;color:#76502b;-webkit-text-fill-color:currentColor}.hero-photo:before,.seal:after{display:none}*,*:before,*:after{animation:none!important;translate:none!important;scale:none!important}}
+@media(forced-colors:active){.gold-shimmer{background:none;color:CanvasText;-webkit-text-fill-color:CanvasText}.petal-field{display:none}}
